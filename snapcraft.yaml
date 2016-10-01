@@ -8,17 +8,17 @@ confinement: devmode # use 'strict' once you have the right plugs and slots
 
 parts:
   swift:
+    snap: [./*]
+    stage-packages:
+      - clang
+    #precompiled version
     source: https://swift.org/builds/swift-3.0-release/ubuntu1510/swift-3.0-RELEASE/swift-3.0-RELEASE-ubuntu15.10.tar.gz
     plugin: dump
-
+    #git version
     #source: https://github.com/apple/swift
     #source-tag: swift-3.0.0-RELEASE
     #plugin: cmake
     #build-packages: [git, cmake, ninja-build, clang, python, uuid-dev, libicu-dev, icu-devtools, libbsd-dev, libedit-dev, libxml2-dev, libsqlite3-dev, swig, libpython-dev, libncurses5-dev, pkg-config, libblocksruntime-dev, libcurl4-openssl-dev]
-
-    snap: [./*]
-    stage-packages:
-      - clang
 apps:
   swift:
     command: bin/swift
