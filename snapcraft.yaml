@@ -22,3 +22,4 @@ parts:
 apps:
   swift:
     command: bin/swift
+    plugs: [content]
